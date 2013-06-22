@@ -8,10 +8,14 @@
 var QS = require("querystring");
 var HTTP = require("http");
 
-var UntappdClient = function(debug) {
+var UntappdClient = function(config) {
     var that = this;
+    var debug = config.debug || false;
 
-    var id,secret,token;
+    // Instance properties
+    var id     = config.id;
+    var secret = config.secret;
+    var token;
 
     var setClientId = function(clientId) {
         id = clientId;
