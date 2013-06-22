@@ -7,7 +7,6 @@
 
 var QS = require("querystring");
 var HTTP = require("http");
-var Crypto = require("crypto");
 
 var UntappdClient = function(debug) {
     var that = this;
