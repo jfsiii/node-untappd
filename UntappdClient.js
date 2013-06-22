@@ -4,6 +4,11 @@
 // By Glen R. Goodwin
 // twitter: @areinet
 //
+// TODO:
+//  * make callback the last argument (not the first, :X)
+//  * use proper prototypes
+//  * drop all instances of `that`
+//  * create a function to prevent the repeated checks for undefined or null
 
 var QS = require("querystring");
 var HTTP = require("http");
