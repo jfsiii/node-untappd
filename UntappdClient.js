@@ -8,7 +8,7 @@
 var QS = require("querystring");
 var HTTP = require("http");
 
-var UntappdClient = function(config) {
+module.exports = function UntappdClient(config) {
     var that = this;
     var debug = config.debug || false;
 
@@ -474,5 +474,3 @@ var UntappdClient = function(config) {
     };
 
 };
-
-module.exports = UntappdClient;
