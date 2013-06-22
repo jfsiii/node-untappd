@@ -21,9 +21,7 @@ var debug = false;
 var lookupuser = "arei";
 
 // Create Client
-var untappd = new UntappdClient(debug);
-untappd.setClientId(clientId);
-untappd.setClientSecret(clientSecret);
+var untappd = new UntappdClient({id: clientId, secret: clientSecret});
 
 // EXAMPLE - List last 25 recent checkins of the given user
 untappd.userFeed(function(err,obj){
