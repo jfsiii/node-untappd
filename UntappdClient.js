@@ -17,46 +17,42 @@ var UntappdClient = function(config) {
     var secret = config.secret;
     var token;
 
-    var setClientId = function(clientId) {
+    this.setClientId = function(clientId) {
         id = clientId;
         return that;
     };
-    this.setClientId = setClientId;
 
-    var getClientId = function() {
+    this.getClientId = function() {
         return id;
     };
-    this.getClientId = getClientId;
 
-    var setClientSecret = function(clientSecret) {
+    this.setClientSecret = function(clientSecret) {
         secret = clientSecret;
         return that;
     };
-    this.setClientSecret = setClientSecret;
 
-    var getClientSecret = function() {
+    this.getClientSecret = function() {
         return secret;
     };
-    this.getClientSecret = getClientSecret;
 
-    var setAccessToken = function(accessToken) {
+    this.setAccessToken = function(accessToken) {
         token = accessToken;
         return that;
     };
-    this.setAccessToken = setAccessToken;
 
-    var getAccessToken = function() {
+    this.getAccessToken = function() {
         return token;
     };
-    this.getAccessToken = getAccessToken;
+
+    // HTTP functions
 
     var post = function(path, params, data, callback){
         return req("POST",path,params,data,callback);
-    }
+    };
 
     var get = function(path, params, callback){
         return req("GET",path,params,null,callback);
-    }
+    };
 
     var req = function(method, path, params, data, callback) {
         if (params && params.constructor==="function" && !callback) callback = params, params = {};
@@ -480,4 +476,3 @@ var UntappdClient = function(config) {
 };
 
 module.exports = UntappdClient;
-
